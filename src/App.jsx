@@ -5,14 +5,15 @@ import './App.css'
 import Navbar from './components/Navbar'
 //import { Home } from 'lucide-react'
 import Home from './pages/Home'
+import Recipe from './pages/Recipe'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
      
-      <Home/>
-      
+      {/* <Home/> */}
+      <Recipe />
       </>
 
   )
