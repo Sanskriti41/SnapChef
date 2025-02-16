@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import Recipe from './pages/Recipe'
 import Scan from './pages/Scan'
 import About from './pages/About'
+import Explore from './pages/Explore'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +22,7 @@ function App() {
           <Route path="/recipe" element={<Recipe />} />
           <Route path="/scan" element={<Scan />} />
         <Route path="/about" element={<About />} />
+        <Route path="/explore" element={<Explore />} />
 
             {/* Redirect any unknown routes to home */}
             <Route path="*" element={<Navigate to="/" replace />} />
