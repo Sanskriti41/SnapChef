@@ -14,7 +14,7 @@ const Navbar = () => {
         <motion.nav
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            className="sticky top-0 z-50 w-full px-6 py-4 bg-white border-b-4 border-black shadow-[0px_4px_0px_#000]"
+            className=" top-0 z-50 w-full px-6 py-4 bg-white border-b-4 border-black shadow-[0px_4px_0px_#000]"
         >
             <div className="max-w-6xl mx-auto flex justify-between items-center">
                 {/* Logo */}
