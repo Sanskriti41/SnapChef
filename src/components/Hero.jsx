@@ -138,6 +138,7 @@ const Hero = () => {
                         Get a Recipe
                     </motion.button>
                 </Link>
+                <Link to="/scan">
                 <motion.button
                     className="px-6 py-3 text-lg font-bold bg-white border-2 border-black shadow-[4px_4px_0px_#000] hover:bg-black hover:text-white transition-all cursor-pointer"
                     whileHover={{ scale: 1.05 }}
@@ -145,6 +146,7 @@ const Hero = () => {
                 >
                     Scan Ingredients
                 </motion.button>
+                </Link>
             </motion.div>
 
             <Modal

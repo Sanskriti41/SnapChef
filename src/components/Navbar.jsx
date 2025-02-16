@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const navItems = [
-        { title: 'About', href: '#' },
-        { title: 'Explore', href: '#' }
+        { title: 'About', href: '/about' },
+        { title: 'Explore', href: '/explore' }
     ];
 
     return (
@@ -22,23 +23,24 @@ const Navbar = () => {
                     whileHover={{ scale: 1.05 }}
                     className="text-2xl font-bold text-black"
                 >
-                    <span className="bg-yellow-300 px-2 py-1 rounded-lg">Snap</span> Chef
+                    <Link to="/" className="flex items-center">
+                        <span className="bg-yellow-300 px-2 py-1 rounded-lg">Snap</span> Chef
+                    </Link>
                 </motion.div>
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center space-x-4">
                     {navItems.map((item) => (
-                        <motion.a
-                            key={item.title}
-                            href={item.href}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="px-4 py-2 border-2 border-black bg-white shadow-[2px_2px_0px_#000] 
+                        <motion.div key={item.title} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                            <Link
+                                to={item.href}
+                                className="px-4 py-2 border-2 border-black bg-white shadow-[2px_2px_0px_#000] 
                                      hover:bg-black hover:text-white transition-all cursor-pointer rounded-lg 
                                      font-medium"
-                        >
-                            {item.title}
-                        </motion.a>
+                            >
+                                {item.title}
+                            </Link>
+                        </motion.div>
                     ))}
 
                     {/* Profile Button */}
@@ -75,16 +77,16 @@ const Navbar = () => {
             >
                 <div className="px-4 py-2 space-y-2">
                     {navItems.map((item) => (
-                        <motion.a
-                            key={item.title}
-                            href={item.href}
-                            whileTap={{ scale: 0.95 }}
-                            className="block px-4 py-2 border-2 border-black bg-white shadow-[2px_2px_0px_#000] 
+                        <motion.div key={item.title} whileTap={{ scale: 0.95 }}>
+                            <Link
+                                to={item.href}
+                                className="block px-4 py-2 border-2 border-black bg-white shadow-[2px_2px_0px_#000] 
                                      hover:bg-black hover:text-white transition-all cursor-pointer rounded-lg 
                                      font-medium text-center"
-                        >
-                            {item.title}
-                        </motion.a>
+                            >
+                                {item.title}
+                            </Link>
+                        </motion.div>
                     ))}
                     <motion.button
                         whileTap={{ scale: 0.95 }}

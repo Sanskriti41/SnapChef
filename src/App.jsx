@@ -6,23 +6,25 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Recipe from './pages/Recipe'
+import Scan from './pages/Scan'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <BrowserRouter>
+
       <div className="min-h-screen bg-gray-100">
 
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/recipe" element={<Recipe />} />
+          <Route path="/recipe" element={<Recipe />} />
+          <Route path="/scan" element={<Scan />} />
             {/* Redirect any unknown routes to home */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
 
       </div>
-    </BrowserRouter>
+
   )
 }
 
