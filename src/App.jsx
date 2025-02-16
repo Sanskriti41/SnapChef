@@ -1,21 +1,28 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/Navbar'
-//import { Home } from 'lucide-react'
 import Home from './pages/Home'
 import Recipe from './pages/Recipe'
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-     
-      {/* <Home/> */}
-      {/* <Recipe /> */}
-      </>
+    <BrowserRouter>
+      <div className="min-h-screen bg-gray-100">
 
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/recipe" element={<Recipe />} />
+            {/* Redirect any unknown routes to home */}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+
+      </div>
+    </BrowserRouter>
   )
 }
 
